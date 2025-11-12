@@ -1,0 +1,314 @@
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.cv-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 60px;
+  font-family: 'Poppins', sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+  line-height: 1.6;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Header Styles */
+.cv-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.name {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #3d3d3d;
+  letter-spacing: 1.5px;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  font-family: 'Poppins', sans-serif;
+}
+
+.contact-info {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.contact-item {
+  display: inline-block;
+}
+
+.contact-item strong {
+  font-weight: 600;
+  color: #555;
+}
+
+.contact-item a {
+  color: rgb(39, 57, 160);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.contact-item a:hover {
+  color: rgb(39, 57, 160);
+  text-decoration: underline;
+}
+
+.separator {
+  color: #bbb;
+  margin: 0 5px;
+}
+
+.divider {
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(to right, transparent, rgb(39, 57, 160), transparent);
+  margin-top: 20px;
+}
+
+/* Content Styles */
+.cv-content {
+  margin-top: 30px;
+}
+
+.profile-section,
+.skills-section,
+.technical-skills,
+.education-section {
+  margin-bottom: 40px;
+}
+
+.section-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: #3d3d3d;
+  margin-bottom: 15px;
+  padding-bottom: 8px;
+  border-bottom: 3px solid  rgb(39, 57, 160);
+  text-transform: uppercase;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Profile Section */
+.profile-text {
+  font-size: 1.1rem;
+  color: #555;
+  text-align: justify;
+  line-height: 1.8;
+  margin-bottom: 15px;
+}
+
+/* Skills Section */
+.skills-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 35px;
+  margin-top: 20px;
+}
+
+.skills-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.skills-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.skills-list li {
+  position: relative;
+  padding-left: 25px;
+  margin-bottom: 15px;
+  font-size: 1rem;
+  color: #444;
+  line-height: 1.7;
+  font-family: 'Poppins', sans-serif;
+}
+
+.skills-list li::before {
+  content: "•";
+  position: absolute;
+  left: 5px;
+  color:  rgb(39, 57, 160);
+  font-weight: bold;
+  font-size: 1.4rem;
+}
+
+/* Technical Skills Section */
+.tech-categories {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.tech-category {
+  background-color: #fff;
+  padding: 20px 25px;
+  border-radius: 8px;
+  border-left: 5px solid  rgb(39, 57, 160);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.category-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 10px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.tech-items {
+  font-size: 1rem;
+  color: #777;
+  line-height: 1.7;
+}
+
+/* Education Section */
+.education-list {
+  margin-top: 20px;
+}
+
+.education-item {
+  margin-bottom: 25px;
+}
+
+.education-item h3.degree {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 8px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.education-item ul li strong {
+  font-weight: 600;
+  color: #3d3d3d;
+}
+
+.education-item p {
+  font-size: 1.1rem;
+  color: #666;
+  margin-bottom: 12px;
+}
+
+.education-item ul {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 10px;
+}
+
+.education-item ul li {
+  position: relative;
+  padding-left: 25px;
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+  color: #444;
+  line-height: 1.6;
+  font-family: 'Poppins', sans-serif;
+}
+
+.education-item ul li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: navy;
+  font-size: 1.2rem;
+  line-height: 1.2;
+  font-weight: bold;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .cv-container {
+    padding: 30px 25px;
+  }
+
+  .name {
+    font-size: 2.5rem;
+    letter-spacing: 1px;
+  }
+
+  .contact-info {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .separator {
+    display: none;
+  }
+
+  .skills-grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .section-title {
+    font-size: 1.3rem;
+  }
+
+  .education-item h3.degree {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .cv-container {
+    padding: 20px 15px;
+  }
+
+  .name {
+    font-size: 2rem;
+    letter-spacing: 1px;
+  }
+
+  .contact-info {
+    font-size: 0.85rem;
+  }
+
+  .section-title {
+    font-size: 1.2rem;
+  }
+
+  .profile-text,
+  .skills-list li,
+  .tech-items,
+  .education-item ul li {
+    font-size: 0.95rem;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .cv-container {
+    padding: 20px;
+    max-width: 100%;
+  }
+
+  .name {
+    font-size: 2.5rem;
+  }
+
+  .section-title {
+    page-break-after: avoid;
+  }
+
+  .profile-section,
+  .skills-section,
+  .technical-skills,
+  .education-section {
+    page-break-inside: avoid;
+  }
+}
