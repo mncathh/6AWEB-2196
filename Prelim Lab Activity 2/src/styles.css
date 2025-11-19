@@ -1,0 +1,26 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(to bottom, #F0F8FF 0%, #ffffff 80%);
+  color: #1a1a1a;
+  margin: 0;
+  padding: 15px 20px 15px 35px;
+}
+
+
+
+/* Container used app-wide */
+.cv-container {
+  max-width: 900px;
+  margin: 40px auto;
+  background-color: #ffffff;          /* White card look */
+  padding: 30px 30px;
+  border-radius: 15px;                /* Rounded corners */
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .cv-container {
+    padding: 20px;
+  }
+}

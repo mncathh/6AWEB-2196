@@ -1,0 +1,43 @@
+/* Certifications Section */
+.certification-section {
+  margin: 30px 0;
+  padding: 20px;
+  background-color: #f9fafc;          /* Slightly off-white for subtle contrast */
+  border-radius: 10px;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.05); /* Softer shadow to match cv-container */
+  font-family: 'Poppins', sans-serif;
+}
+
+.section-title {
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: #1f2d3d;
+  margin-bottom: 25px;
+  padding-bottom: 10px;
+  border-bottom: 3px solid #0073e6;
+  letter-spacing: 0.5px;
+}
+
+.certifications-list {
+  list-style: none;                   /* Remove default bullets */
+  padding: 0;
+  margin: 0;
+}
+
+.certifications-list li {
+  font-size: 1rem;
+  color: #333;                        /* Slightly lighter than title */
+  padding: 8px 0;
+  border-bottom: 1px solid #e0e0e0;   /* Subtle divider */
+}
+
+.certifications-list li:last-child {
+  border-bottom: none;
+}
+
+.certifications-list li::before {
+  content: "✔";                       /* Checkmark bullet */
+  color: #0073e6;                     /* Accent color */
+  margin-right: 10px;
+  font-weight: bold;
+}
