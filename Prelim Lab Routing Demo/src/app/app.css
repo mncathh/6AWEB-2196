@@ -1,0 +1,45 @@
+/* Resume-style navbar */
+nav {
+  background-color: #ffffff; /* clean white background */
+  border-bottom: 1px solid #e0e0e0; /* subtle divider */
+  padding: 12px 40px;
+  display: flex;
+  justify-content: center; /* center links */
+  gap: 40px; /* spacing between links */
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* Links */
+nav a {
+  color: #333333; /* professional dark gray */
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: 0.5px;
+  transition: color 0.3s ease, border-bottom 0.3s ease;
+  padding: 6px 0;
+}
+
+/* Hover effect */
+nav a:hover {
+  color: #1976d2; /* resume-style blue accent */
+  border-bottom: 2px solid #1976d2;
+}
+
+/* Active route styling (Angular routerLinkActive="active") */
+nav a.active {
+  color: #1976d2;
+  border-bottom: 2px solid #1976d2;
+}
+
+/* Responsive for mobile */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    padding: 16px;
+  }
+}

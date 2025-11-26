@@ -1,0 +1,109 @@
+/* General reset */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  color: #333;
+  background-color: #f9f9f9;
+  line-height: 1.6;
+}
+
+/* Header */
+.resume-header {
+  background-color: #e3f2fd; /* light blue background */
+  color: #0d47a1; /* deep blue text */
+  text-align: center;
+  padding: 50px 20px;
+  border-bottom: 2px solid #bbdefb;
+}
+
+.resume-header h1 {
+  font-size: 42px;
+  margin: 0;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.resume-header h2 {
+  font-size: 22px;
+  font-weight: 400;
+  margin: 12px 0;
+  color: #1565c0;
+}
+
+.contact-info {
+  font-size: 15px;
+  margin-top: 12px;
+  color: #444;
+}
+
+.contact-info a {
+  color: #1565c0; /* medium blue accent */
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.contact-info a:hover {
+  text-decoration: underline;
+}
+
+/* Sections */
+.resume-section {
+  background: #fff;
+  margin: 40px auto;
+  padding: 40px;
+  max-width: 900px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+}
+
+.resume-section h3 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #0d47a1; /* deep blue headings */
+  border-bottom: 2px solid #e3f2fd;
+  padding-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Skills (old badge style, can be replaced with tech categories) */
+.skills-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  justify-content: center;
+}
+
+.skills-list li {
+  background: #bbdefb; /* soft blue badge */
+  padding: 10px 18px;
+  border-radius: 20px; /* pill shape for modern look */
+  font-weight: 500;
+  color: #0d47a1;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.skills-list li:hover {
+  background: #90caf9; /* slightly darker blue on hover */
+  transform: translateY(-2px);
+}
+
+
+.resume-section a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .resume-header h1 {
+    font-size: 32px;
+  }
+  .resume-header h2 {
+    font-size: 18px;
+  }
+  .resume-section {
+    padding: 25px;
+  }
+}
