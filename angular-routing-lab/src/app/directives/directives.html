@@ -1,0 +1,112 @@
+<!-- Static Note -->
+<div class="card">
+  @if(isStaticNoteVisible===true) {
+    <h2 class="note">This is a static note with true value!</h2>
+  } @else {
+    <h2 class="note">This Static Note has false value.</h2>
+  }
+</div>
+
+
+<!-- Show / Hide Note -->
+<div class="card">
+  @if(isNoteVisible===true) {
+    <p>This is a Note !</p>
+  }
+
+  <button class="btn" (click)="showNote()">Show Note</button>
+  <button class="btn" (click)="hideNote()">Hide Note</button>
+</div>
+
+
+<!-- Toggle -->
+<div class="card">
+  <button class="btn" (click)="toggleNote()">
+    {{isParagraphVisible ? 'Hide' : 'Show'}}
+  </button>
+
+  @if (isParagraphVisible) {
+    <p>This is the paragraph content.</p>
+  }
+</div>
+
+
+<!-- Static Month Display -->
+<div class="card">
+  @if(monthNameStatic == 'Jan') {
+    <p>January</p>
+  }
+  @else if(monthNameStatic == 'Feb'){
+    <p>February</p>
+  }
+  @else if (monthNameStatic == 'Mar'){
+    <p>March</p>
+  }
+</div>
+
+
+<!-- Dynamic Month Display -->
+<div class="card">
+  <div>
+    @if(monthNameDynamic == 'Jan') {
+      <p>January</p>
+    }
+    @else if(monthNameDynamic == 'Feb'){
+      <p>February</p>
+    }
+    @else if (monthNameDynamic == 'Mar'){
+      <p>March</p>
+    }
+    @if(monthNameDynamic == 'Apr'){
+      <p>April</p>
+    }
+    @else if(monthNameDynamic == 'May'){
+      <p>May</p>
+    }
+    @else if (monthNameDynamic == 'June'){
+      <p>June</p>
+    }
+  </div>
+
+  <input class="input-box" type="text" [(ngModel)]="monthNameDynamic">
+</div>
+
+
+<!-- City List -->
+<div class="card">
+  <ul>
+    @for (item of cityList; track $index){
+      <li>{{item}}</li>
+    }
+  </ul>
+</div>
+
+
+<!-- Student Table -->
+<table class="styled-table">
+  <thead>
+    <tr>
+      <th>Student No</th>
+      <th>Name</th>
+      <th>Course</th>
+      <th>Status</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    @for (item of studentList; track $index){
+      <tr>
+        <td>{{$index+1}}</td>
+        <td>{{item.name}}</td>
+        <td>{{item.course}}</td>
+        <td>
+          @if (item.isActive == true) {
+            <span class="active">Active</span>
+          } @else {
+            <span class="inactive">Inactive</span>
+          }
+        </td>
+      </tr>
+    }
+  </tbody>
+</table>

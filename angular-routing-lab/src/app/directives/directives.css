@@ -1,0 +1,89 @@
+/* Overall Container */
+:host {
+  display: block;
+  max-width: 650px;
+  margin: 20px auto;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Cards */
+.card {
+  background: #ffffff;
+  padding: 18px;
+  margin: 18px 0;
+  border-radius: 16px;
+  border: 1px solid #999999;
+  box-shadow: 0 2px 10px rgba(0, 157, 255, 0.15);
+}
+
+/* Text */
+p, ul, th, td {
+  font-size: 15px;
+  color: #2a2a2a;
+}
+
+/* Cute Blue Buttons */
+.btn {
+  background: #009dff;
+  color: #fff;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 14px;
+  margin: 4px;
+  transition: 0.25s;
+}
+
+.btn:hover {
+  background: #007cc8;
+  transform: translateY(-2px);
+}
+
+/* Input */
+.input-box {
+  width: 100%;
+  padding: 10px;
+  border: 2px solid #009dff;
+  border-radius: 12px;
+  font-size: 15px;
+  outline: none;
+}
+
+.input-box:focus {
+  border-color: #007cc8;
+  box-shadow: 0 0 6px rgba(0, 157, 255, 0.4);
+}
+
+/* Cute Table */
+.styled-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.styled-table thead tr {
+  background: #009dff;
+  color: #fff;
+}
+
+.styled-table th, .styled-table td {
+  padding: 12px;
+}
+
+.styled-table tbody tr:nth-child(even) {
+  background: #e8f6ff;
+}
+
+/* Status Styles */
+.active {
+  color: #00af5c;
+  font-weight: bold;
+}
+
+.inactive {
+  color: #d60000;
+  font-weight: bold;
+}

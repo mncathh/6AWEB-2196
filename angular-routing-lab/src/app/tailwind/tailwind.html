@@ -1,0 +1,288 @@
+<div class="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100">
+  <!-- Hero Section -->
+  <div class="bg-gradient-to-r from-cyan-500 to-blue-500 text-white">
+    <div class="container mx-auto px-4 py-20 text-center">
+      <h1 class="text-6xl font-extrabold mb-4 drop-shadow-lg">TailwindCSS Blog</h1>
+      <p class="text-2xl text-cyan-50">Explore beautiful designs with utility-first CSS</p>
+      <div class="mt-8">
+        <button class="bg-white text-cyan-600 px-8 py-3 rounded-full font-bold hover:bg-cyan-50 transition-all transform hover:scale-105 shadow-lg">
+          Start Reading
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <div class="container mx-auto px-4 py-16">
+    <!-- Featured Post with Image -->
+    <article class="bg-white rounded-2xl shadow-2xl overflow-hidden mb-16 hover:shadow-3xl transition-all duration-500 transform hover:-translate-y-1">
+      <div class="md:flex">
+        <div class="md:w-2/5">
+          <img src="https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=800&h=600&fit=crop"
+               alt="TailwindCSS Code"
+               class="h-full w-full object-cover"
+               onerror="this.src='https://placehold.co/800x600/3b82f6/white?text=TailwindCSS'">
+        </div>
+        <div class="md:w-3/5 p-10">
+          <div class="flex items-center mb-4 gap-3">
+            <span class="bg-gradient-to-r from-cyan-500 to-blue-500 text-white text-sm font-bold px-4 py-2 rounded-full">⭐ Featured</span>
+            <span class="text-gray-400 text-sm">December 3, 2025</span>
+          </div>
+          <h2 class="text-4xl font-extrabold text-gray-900 mb-4 leading-tight">Building Modern Websites with TailwindCSS</h2>
+          <p class="text-gray-600 mb-6 leading-relaxed text-lg">
+            TailwindCSS is transforming modern web development with its utility-first approach. Discover how to create stunning, responsive websites faster than ever. Learn about customization, optimization, and best practices for production-ready applications.
+          </p>
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-3">
+              <img src="https://ui-avatars.com/api/?name=Catherine+Laguda&background=3b82f6&color=fff&size=48"
+                   alt="Aishley Bundalian"
+                   class="w-12 h-12 rounded-full ring-4 ring-cyan-100">
+              <div>
+                <p class="text-sm font-bold text-gray-900">Catherine Laguda</p>
+                <p class="text-xs text-gray-500">Web Developer</p>
+              </div>
+            </div>
+            <a href="https://tailwindcss.com/docs" target="_blank" rel="noopener noreferrer"
+               class="bg-gradient-to-r from-cyan-500 to-blue-500 text-white px-6 py-3 rounded-xl hover:from-cyan-600 hover:to-blue-600 transition-all font-semibold shadow-lg hover:shadow-xl transform hover:scale-105">
+              Read More →
+            </a>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- Blog Grid with Images -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+      <!-- Blog Post 1 - Responsive Design -->
+      <article class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+        <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?w=600&h=400&fit=crop"
+             alt="Responsive Design"
+             class="w-full h-56 object-cover"
+             onerror="this.src='https://placehold.co/600x400/06b6d4/white?text=Responsive+Design'">
+        <div class="p-6">
+          <span class="text-xs font-bold text-cyan-600 uppercase tracking-wide bg-cyan-50 px-3 py-1 rounded-full">Design</span>
+          <h3 class="text-2xl font-bold text-gray-900 mt-3 mb-3 hover:text-cyan-600 transition-colors">Responsive Design Mastery</h3>
+          <p class="text-gray-600 text-sm mb-4 leading-relaxed">
+            Master the art of responsive design with Tailwind's intuitive breakpoint system. Create layouts that look perfect on any device.
+          </p>
+          <div class="flex items-center justify-between pt-4 border-t border-gray-100">
+            <span class="text-xs text-gray-400 font-medium">⏱️ 6 min read</span>
+            <a href="https://tailwindcss.com/docs/responsive-design" target="_blank" rel="noopener noreferrer"
+               class="text-cyan-600 hover:text-cyan-700 text-sm font-bold flex items-center gap-1">
+              Read More →
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Blog Post 2 - Dark Mode -->
+      <article class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+        <img src="https://images.unsplash.com/photo-1618761714954-0b8cd0026356?w=600&h=400&fit=crop"
+             alt="Dark Mode"
+             class="w-full h-56 object-cover"
+             onerror="this.src='https://placehold.co/600x400/1e293b/white?text=Dark+Mode'">
+        <div class="p-6">
+          <span class="text-xs font-bold text-slate-600 uppercase tracking-wide bg-slate-100 px-3 py-1 rounded-full">Tutorial</span>
+          <h3 class="text-2xl font-bold text-gray-900 mt-3 mb-3 hover:text-slate-600 transition-colors">Dark Mode Implementation</h3>
+          <p class="text-gray-600 text-sm mb-4 leading-relaxed">
+            Implement beautiful dark mode in your applications using Tailwind's dark variant. Your users will love it!
+          </p>
+          <div class="flex items-center justify-between pt-4 border-t border-gray-100">
+            <span class="text-xs text-gray-400 font-medium">⏱️ 8 min read</span>
+            <a href="https://tailwindcss.com/docs/dark-mode" target="_blank" rel="noopener noreferrer"
+               class="text-slate-600 hover:text-slate-700 text-sm font-bold flex items-center gap-1">
+              Read More →
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Blog Post 3 - Customization -->
+      <article class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+        <img src="https://images.unsplash.com/photo-1507721999472-8ed4421c4af2?w=600&h=400&fit=crop"
+             alt="Customization"
+             class="w-full h-56 object-cover"
+             onerror="this.src='https://placehold.co/600x400/8b5cf6/white?text=Customization'">
+        <div class="p-6">
+          <span class="text-xs font-bold text-purple-600 uppercase tracking-wide bg-purple-50 px-3 py-1 rounded-full">Advanced</span>
+          <h3 class="text-2xl font-bold text-gray-900 mt-3 mb-3 hover:text-purple-600 transition-colors">Custom Configuration Guide</h3>
+          <p class="text-gray-600 text-sm mb-4 leading-relaxed">
+            Customize Tailwind to match your brand. Learn how to extend colors, fonts, spacing, and create your own design system.
+          </p>
+          <div class="flex items-center justify-between pt-4 border-t border-gray-100">
+            <span class="text-xs text-gray-400 font-medium">⏱️ 10 min read</span>
+            <a href="https://tailwindcss.com/docs/configuration" target="_blank" rel="noopener noreferrer"
+               class="text-purple-600 hover:text-purple-700 text-sm font-bold flex items-center gap-1">
+              Read More →
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Blog Post 4 - Performance -->
+      <article class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop"
+             alt="Performance"
+             class="w-full h-56 object-cover"
+             onerror="this.src='https://placehold.co/600x400/f59e0b/white?text=Performance'">
+        <div class="p-6">
+          <span class="text-xs font-bold text-amber-600 uppercase tracking-wide bg-amber-50 px-3 py-1 rounded-full">Performance</span>
+          <h3 class="text-2xl font-bold text-gray-900 mt-3 mb-3 hover:text-amber-600 transition-colors">Optimizing for Production</h3>
+          <p class="text-gray-600 text-sm mb-4 leading-relaxed">
+            Learn how to optimize your Tailwind builds for production. Achieve minimal CSS file sizes and lightning-fast load times.
+          </p>
+          <div class="flex items-center justify-between pt-4 border-t border-gray-100">
+            <span class="text-xs text-gray-400 font-medium">⏱️ 7 min read</span>
+            <a href="https://tailwindcss.com/docs/optimizing-for-production" target="_blank" rel="noopener noreferrer"
+               class="text-amber-600 hover:text-amber-700 text-sm font-bold flex items-center gap-1">
+              Read More →
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Blog Post 5 - Animations -->
+      <article class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&h=400&fit=crop"
+             alt="Animations"
+             class="w-full h-56 object-cover"
+             onerror="this.src='https://placehold.co/600x400/ec4899/white?text=Animations'">
+        <div class="p-6">
+          <span class="text-xs font-bold text-pink-600 uppercase tracking-wide bg-pink-50 px-3 py-1 rounded-full">Creative</span>
+          <h3 class="text-2xl font-bold text-gray-900 mt-3 mb-3 hover:text-pink-600 transition-colors">Animations & Transitions</h3>
+          <p class="text-gray-600 text-sm mb-4 leading-relaxed">
+            Bring your interfaces to life with Tailwind's animation utilities. Create smooth, professional transitions effortlessly.
+          </p>
+          <div class="flex items-center justify-between pt-4 border-t border-gray-100">
+            <span class="text-xs text-gray-400 font-medium">⏱️ 5 min read</span>
+            <a href="https://tailwindcss.com/docs/animation" target="_blank" rel="noopener noreferrer"
+               class="text-pink-600 hover:text-pink-700 text-sm font-bold flex items-center gap-1">
+              Read More →
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Blog Post 6 - Components -->
+      <article class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+        <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=600&h=400&fit=crop"
+             alt="Components"
+             class="w-full h-56 object-cover"
+             onerror="this.src='https://placehold.co/600x400/10b981/white?text=Components'">
+        <div class="p-6">
+          <span class="text-xs font-bold text-emerald-600 uppercase tracking-wide bg-emerald-50 px-3 py-1 rounded-full">Components</span>
+          <h3 class="text-2xl font-bold text-gray-900 mt-3 mb-3 hover:text-emerald-600 transition-colors">Building Component Libraries</h3>
+          <p class="text-gray-600 text-sm mb-4 leading-relaxed">
+            Create reusable component libraries with Tailwind. Learn best practices for maintainable and scalable code architecture.
+          </p>
+          <div class="flex items-center justify-between pt-4 border-t border-gray-100">
+            <span class="text-xs text-gray-400 font-medium">⏱️ 12 min read</span>
+            <a href="https://tailwindcss.com/docs/reusing-styles" target="_blank" rel="noopener noreferrer"
+               class="text-emerald-600 hover:text-emerald-700 text-sm font-bold flex items-center gap-1">
+              Read More →
+            </a>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <!-- Website Review Section -->
+    <div class="bg-white rounded-2xl shadow-xl p-8 mb-16">
+      <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center">Website Showcase</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <!-- Review 1 -->
+        <div class="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300">
+          <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=800&h=500&fit=crop"
+               alt="Modern Website Design"
+               class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
+               onerror="this.src='https://placehold.co/800x500/3b82f6/white?text=Modern+Website'">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
+              <h3 class="text-xl font-bold mb-2">⭐⭐⭐⭐⭐ Modern Portfolio</h3>
+              <p class="text-sm text-gray-200">Clean design with smooth animations and excellent responsive layout.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review 2 -->
+        <div class="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300">
+          <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&h=500&fit=crop"
+               alt="E-commerce Website"
+               class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
+               onerror="this.src='https://placehold.co/800x500/10b981/white?text=E-commerce+Site'">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
+              <h3 class="text-xl font-bold mb-2">⭐⭐⭐⭐⭐ E-commerce Platform</h3>
+              <p class="text-sm text-gray-200">Beautiful product showcase with intuitive navigation and checkout flow.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Navigation Links Section -->
+    <div class="bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 rounded-3xl shadow-2xl p-10 mb-16">
+      <h2 class="text-4xl font-extrabold text-white mb-8 text-center">Explore My Projects</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- Home Card -->
+        <a href="/" class="bg-white/95 backdrop-blur rounded-2xl p-8 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 hover:bg-white group">
+          <div class="flex items-center mb-4">
+            <div class="w-16 h-16 bg-gradient-to-br from-blue-400 to-blue-600 rounded-2xl flex items-center justify-center text-white text-2xl font-bold shadow-lg group-hover:scale-110 transition-transform">
+              🏠
+            </div>
+          </div>
+          <h3 class="text-2xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors">Home</h3>
+          <p class="text-gray-600 leading-relaxed">
+            Welcome to my personal portfolio. Discover my background, skills, and contact information.
+          </p>
+        </a>
+
+        <!-- Data Binding Card -->
+        <a href="/data-binding" class="bg-white/95 backdrop-blur rounded-2xl p-8 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 hover:bg-white group">
+          <div class="flex items-center mb-4">
+            <div class="w-16 h-16 bg-gradient-to-br from-green-400 to-emerald-600 rounded-2xl flex items-center justify-center text-white text-2xl font-bold shadow-lg group-hover:scale-110 transition-transform">
+              🔗
+            </div>
+          </div>
+          <h3 class="text-2xl font-bold text-gray-900 mb-3 group-hover:text-emerald-600 transition-colors">Data Binding</h3>
+          <p class="text-gray-600 leading-relaxed">
+            Explore Angular's powerful data binding features and interactive examples.
+          </p>
+        </a>
+
+        <!-- Directives Card -->
+        <a href="/directives" class="bg-white/95 backdrop-blur rounded-2xl p-8 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 hover:bg-white group">
+          <div class="flex items-center mb-4">
+            <div class="w-16 h-16 bg-gradient-to-br from-purple-400 to-violet-600 rounded-2xl flex items-center justify-center text-white text-2xl font-bold shadow-lg group-hover:scale-110 transition-transform">
+              ⚡
+            </div>
+          </div>
+          <h3 class="text-2xl font-bold text-gray-900 mb-3 group-hover:text-violet-600 transition-colors">Directives</h3>
+          <p class="text-gray-600 leading-relaxed">
+            Learn about Angular's control flow syntax and dynamic rendering techniques.
+          </p>
+        </a>
+      </div>
+    </div>
+
+    <!-- Newsletter Section -->
+    <div class="bg-gradient-to-br from-white to-gray-50 rounded-3xl shadow-xl p-12 text-center border border-gray-100">
+      <div class="max-w-2xl mx-auto">
+        <div class="w-20 h-20 bg-gradient-to-br from-cyan-400 to-blue-600 rounded-full flex items-center justify-center text-white text-4xl mx-auto mb-6 shadow-lg">
+          ✉️
+        </div>
+        <h2 class="text-4xl font-extrabold text-gray-900 mb-4">Stay in the Loop</h2>
+        <p class="text-gray-600 text-lg mb-8">Get the latest articles about web development and TailwindCSS delivered to your inbox</p>
+        <div class="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+          <input type="email"
+                 placeholder="your.email@example.com"
+                 class="flex-1 px-6 py-4 border-2 border-gray-200 rounded-xl focus:outline-none focus:ring-4 focus:ring-cyan-500/20 focus:border-cyan-500 transition-all text-gray-900 placeholder-gray-400">
+          <button class="bg-gradient-to-r from-cyan-500 to-blue-500 text-white px-8 py-4 rounded-xl hover:from-cyan-600 hover:to-blue-600 transition-all font-bold shadow-lg hover:shadow-xl transform hover:scale-105 whitespace-nowrap">
+            Subscribe Now
+          </button>
+        </div>
+        <p class="text-xs text-gray-400 mt-4">🔒 No spam, unsubscribe anytime</p>
+      </div>
+    </div>
+  </div>
+</div>

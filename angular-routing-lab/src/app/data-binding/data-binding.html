@@ -1,0 +1,73 @@
+<div class="container">
+  <h1>Angular Data Binding Demo</h1>
+
+  <!-- 1. Text Interpolation -->
+  <section class="demo-section">
+    <h2>1. Text Interpolation</h2>
+    <p>{{ message }}</p>
+    <p>Current Count: {{ clickCount }}</p>
+  </section>
+
+  <!-- 2. Property Binding -->
+  <section class="demo-section">
+    <h2>2. Property Binding</h2>
+    <img [src]="imageUrl" alt="Angular Logo" width="100">
+    <br><br>
+    <button [disabled]="isDisabled">Click Me</button>
+    <br><br>
+    <label>
+      <input type="checkbox" [(ngModel)]="isDisabled">
+      Toggle Button Disabled State
+    </label>
+  </section>
+
+  <!-- 3. Style Binding -->
+  <section class="demo-section">
+    <h2>3. Style Binding</h2>
+    <p [style.color]="textColor" [style.fontSize.px]="fontSize">
+      This text has dynamic styling!
+    </p>
+    <div>
+      <label>Color:
+        <input type="text" [(ngModel)]="textColor" placeholder="Enter color">
+      </label>
+      <br>
+      <label>Font Size:
+        <input type="number" [(ngModel)]="fontSize" placeholder="Enter size">
+      </label>
+    </div>
+  </section>
+
+  <!-- 4. Class Binding -->
+  <section class="demo-section">
+    <h2>4. Class Binding</h2>
+    <div [class.active]="isActive" [class.error]="hasError" class="status-box">
+      Status Box
+    </div>
+    <br>
+    <label>
+      <input type="checkbox" [(ngModel)]="isActive">
+      Toggle Active Class
+    </label>
+    <br>
+    <label>
+      <input type="checkbox" [(ngModel)]="hasError">
+      Toggle Error Class
+    </label>
+  </section>
+
+  <!-- 5. Two-Way Data Binding -->
+  <section class="demo-section">
+    <h2>5. Two-Way Data Binding</h2>
+    <input type="text" [(ngModel)]="yourName" placeholder="Enter your name">
+    <p>Hello, {{ yourName || 'Guest' }}!</p>
+  </section>
+
+  <!-- 6. Event Binding -->
+  <section class="demo-section">
+    <h2>6. Event Binding</h2>
+    <button (click)="handleClick()" class="event-button">
+      Click Me! (Clicked {{ clickCount }} times)
+    </button>
+  </section>
+</div>

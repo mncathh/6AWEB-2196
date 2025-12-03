@@ -1,0 +1,59 @@
+<div class="container d-flex align-items-center justify-content-center min-vh-100">
+  <div class="text-center">
+    <!-- 404 Number -->
+    <h1 class="display-1 fw-bold text-primary mb-4" style="font-size: 8rem;">404</h1>
+
+    <!-- Error Message -->
+    <h2 class="display-5 fw-bold text-dark mb-3">Page Not Found</h2>
+    <p class="lead text-muted mb-4">
+      Oops! The page you're looking for doesn't exist.
+    </p>
+    <p class="text-secondary mb-5">
+      The page you are trying to access may have been removed, had its name changed,
+      or is temporarily unavailable.
+    </p>
+
+    <!-- Error Icon -->
+    <div class="mb-5">
+      <svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" fill="currentColor" class="text-primary opacity-75" viewBox="0 0 16 16">
+        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+        <path d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995z"/>
+      </svg>
+    </div>
+
+    <!-- Action Buttons -->
+    <div class="d-flex gap-3 justify-content-center flex-wrap">
+      <a href="/" class="btn btn-primary btn-lg px-4">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="me-2" viewBox="0 0 16 16">
+          <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.707 1.5ZM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5 5 5Z"/>
+        </svg>
+        Go to Home
+      </a>
+      <button onclick="history.back()" class="btn btn-outline-secondary btn-lg px-4">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="me-2" viewBox="0 0 16 16">
+          <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
+        </svg>
+        Go Back
+      </button>
+    </div>
+
+    <!-- Helpful Links -->
+    <div class="mt-5 pt-5 border-top">
+      <h5 class="text-muted mb-3">You might want to visit:</h5>
+      <div class="d-flex gap-3 justify-content-center flex-wrap">
+        <a href="/data-binding" class="text-decoration-none">
+          <span class="badge bg-primary bg-opacity-10 text-primary px-3 py-2 fs-6 fw-normal">Data Binding</span>
+        </a>
+        <a href="/directives" class="text-decoration-none">
+          <span class="badge bg-success bg-opacity-10 text-success px-3 py-2 fs-6 fw-normal">Directives</span>
+        </a>
+        <a href="/bootstrap" class="text-decoration-none">
+          <span class="badge bg-info bg-opacity-10 text-info px-3 py-2 fs-6 fw-normal">Bootstrap</span>
+        </a>
+        <a href="/tailwind" class="text-decoration-none">
+          <span class="badge bg-warning bg-opacity-10 text-warning px-3 py-2 fs-6 fw-normal">Tailwind</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
