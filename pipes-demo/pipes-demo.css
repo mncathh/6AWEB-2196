@@ -1,0 +1,108 @@
+/* Import magical font */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;800&family=Montserrat:wght@300;400;600&display=swap');
+
+/* Enchanted background */
+:host {
+  display: block;
+  min-height: 100vh;
+  padding: 2.5rem;
+  background:
+    radial-gradient(circle at top, #1e293b, #020617 70%);
+  color: #e5e7eb;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Main spellbook title */
+h1 {
+  text-align: center;
+  font-family: 'Cinzel', serif;
+  font-size: 3.2rem;
+  margin-bottom: 3rem;
+  color: #fde68a;
+  letter-spacing: 3px;
+  text-shadow:
+    0 0 10px rgba(253, 230, 138, 0.6),
+    0 0 25px rgba(253, 230, 138, 0.3);
+}
+
+/* Spell cards */
+div {
+  background: linear-gradient(
+    160deg,
+    rgba(15, 23, 42, 0.96),
+    rgba(2, 6, 23, 0.96)
+  );
+  border-radius: 16px;
+  padding: 1.8rem 2rem;
+  margin-bottom: 2rem;
+  border: 1px solid rgba(147, 197, 253, 0.25);
+  box-shadow:
+    0 0 18px rgba(59, 130, 246, 0.25);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+/* Gentle hover glow */
+div:hover {
+  transform: translateY(-5px);
+  box-shadow:
+    0 0 28px rgba(59, 130, 246, 0.45);
+}
+
+/* Section headers */
+h2 {
+  font-family: 'Cinzel', serif;
+  font-size: 1.55rem;
+  color: #bfdbfe;
+  margin-bottom: 0.5rem;
+}
+
+/* Description (spell explanation) */
+p:first-of-type {
+  color: #c7d2fe;
+  font-style: italic;
+  margin-bottom: 1.1rem;
+  line-height: 1.6;
+}
+
+/* Normal text */
+p {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  margin: 0.35rem 0;
+  color: #e5e7eb;
+}
+
+/* Highlighted spell results */
+strong {
+  color: #93c5fd;
+  font-weight: 500;
+}
+
+/* Soft divider effect */
+div::after {
+  content: '';
+  display: block;
+  margin-top: 1.2rem;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(147, 197, 253, 0.3),
+    transparent
+  );
+}
+
+/* Responsive readability */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2.3rem;
+  }
+
+  div {
+    padding: 1.4rem 1.6rem;
+  }
+
+  h2 {
+    font-size: 1.35rem;
+  }
+}

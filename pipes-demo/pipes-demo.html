@@ -1,0 +1,69 @@
+<h1>Angular Pipes Showcase</h1>
+
+<!-- 1. Date Pipes -->
+<div>
+  <h2>Date Pipes 📅</h2>
+  <p>Spell: Time-traveling formatter—converts Date objects to readable strings (e.g., short/full/custom). Chain with uppercase for bold vibes!</p>
+  <p>Current date (raw): {{ presentDate }}</p>
+  <p>Current date (formatted): {{ presentDate | date }}</p>
+  <p>Current date (full): {{ presentDate | date:'full' }}</p>
+  <p>Current date (chained uppercase): {{ presentDate | date:'fullDate' | uppercase }}</p>
+</div>
+
+<!-- 2. Async Pipes -->
+<div>
+  <h2>Async Pipes ⏰</h2>
+  <p>Spell: Observable oracle—auto-subscribes to live data streams (like a ticking clock) without manual cleanup. Formats time on the fly!</p>
+  <p>Seconds changing in Time: {{ time$ | async | date:'mediumTime' }}</p>
+</div>
+
+<!-- 3. Slice Pipes -->
+<div>
+  <h2>Slice Pipes ✂️</h2>
+  <p>Spell: Array artisan—carves out sub-sections of arrays by index. Start-only for "to-end," or start-end for ranges!</p>
+  <p>Full array: {{ numbers }}</p>
+  <p>Sliced (start at 2): {{ numbers | slice:2 }}</p>
+  <p>Sliced (range 2-5): {{ numbers | slice:2:5 }}</p>
+</div>
+
+<!-- 4. Currency Pipes -->
+<div>
+  <h2>Currency Pipes 💰</h2>
+  <p>Spell: Money morpher—turns numbers into currency formats (e.g., USD/EUR). Add codes/symbols for global flair!</p>
+  <p>Price (USD): {{ price | currency:'USD' }}</p>
+  <p>Price (EUR): {{ price | currency:'EUR' }}</p>
+  <p>Price (INR, symbol): {{ price | currency:'INR':'symbol' }}</p>
+</div>
+
+<!-- 5. Decimal Pipes -->
+<div>
+  <h2>Decimal Pipes 🔢</h2>
+  <p>Spell: Precision polisher—formats decimals with custom digit rules (min/max). Perfect for math or finance displays!</p>
+  <p>Decimal value: {{ decimalValue | number }}</p>
+  <p>Decimal (2.2-2): {{ decimalValue | number:'2.2-2' }}</p>
+  <p>Decimal (1.0-3): {{ decimalValue | number:'1.0-3' }}</p>
+</div>
+
+<!-- 6. UpperCase Pipes (Extra 1) -->
+<div>
+  <h2>UpperCase Pipes 🔠</h2>
+  <p>Spell: Shouty sorcerer—transforms strings to ALL CAPS, like yelling for emphasis!</p>
+  <p>Original text: {{ text }}</p>
+  <p>Uppercase: {{ text | uppercase }}</p>
+</div>
+
+<!-- 7. LowerCase Pipes (Extra 2) -->
+<div>
+  <h2>LowerCase Pipes 🔡</h2>
+  <p>Spell: Whispering wizard—softens strings to lowercase, calming the data storm!</p>
+  <p>Original text: {{ text }}</p>
+  <p>Lowercase: {{ text | lowercase }}</p>
+</div>
+
+<!-- 8. Percent Pipes (Extra 3) -->
+<div>
+  <h2>Percent Pipes 📊</h2>
+  <p>Spell: Ratio revealer—converts decimals to percentages (e.g., 0.85 → 85%). Ideal for stats and progress!</p>
+  <p>Percentage: {{ percentage | percent }}</p>
+  <p>Percentage (2.2-2): {{ percentage | percent:'2.2-2' }}</p>
+</div>
