@@ -1,0 +1,23 @@
+<h2>EMPLOYEES LIST</h2>
+<table>
+  <thead>
+    <tr><th>ID</th><th>FIRST NAME</th><th>LAST NAME</th><th>EMAIL</th></tr>
+  </thead>
+  <tbody>
+    @for (e of employees; track e.id) {
+      <tr><td>{{e.id}}</td><td>{{e.firstname}}</td><td>{{e.lastname}}</td><td>{{e.email}}</td></tr>
+    }
+  </tbody>
+</table>
+
+<h2>PRODUCT LIST</h2>
+<table>
+  <thead>
+    <tr><th>Product ID</th><th>Product Name</th><th>Description</th><th>Price</th></tr>
+  </thead>
+  <tbody>
+    @for (p of products; track p.id) {
+      <tr><td>{{p.id}}</td><td>{{p.name}}</td><td>{{p.description}}</td><td>{{p.price | number:'1.2-2'}}</td></tr>
+    }
+  </tbody>
+</table>

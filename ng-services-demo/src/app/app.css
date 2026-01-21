@@ -1,0 +1,92 @@
+
+.container {
+  padding: 40px;
+  font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: #f8fafc;
+  min-height: 100vh;
+}
+
+
+h2 {
+  color: #1e3a8a;
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+
+h2::before {
+  content: "";
+  display: inline-block;
+  width: 5px;
+  height: 25px;
+  background-color: #3b82f6;
+  border-radius: 10px;
+}
+
+
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin-bottom: 30px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e2e8f0;
+}
+
+/* Professional Header Styling */
+th {
+  background-color: #1e40af; /* Primary Blue */
+  color: #ffffff;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  padding: 16px 20px;
+  text-align: left;
+}
+
+/* Data Cell Styling */
+td {
+  padding: 14px 20px;
+  font-size: 0.9rem;
+  color: #334155;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+/* Zebra Striping (Light Blue) */
+tr:nth-child(even) {
+  background-color: #f1f7ff;
+}
+
+/* Row Hover Interaction */
+tr:hover {
+  background-color: #e0e7ff;
+  transition: all 0.2s ease;
+}
+
+/* Remove bottom border for the last row */
+tr:last-child td {
+  border-bottom: none;
+}
+
+/* Specific formatting for Price or ID columns */
+td:first-child {
+  font-weight: 600;
+  color: #1e40af;
+}
+
+/* Responsive adjustment */
+@media (max-width: 768px) {
+  .container { padding: 15px; }
+  table { font-size: 0.8rem; }
+}
