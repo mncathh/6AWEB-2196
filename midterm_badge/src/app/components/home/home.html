@@ -1,0 +1,163 @@
+<div class="home-wrapper">
+  <div class="home-container">
+    <h2 class="page-title">{{ 'Community Help Desk' | uppercase }}</h2>
+
+    <p class="intro-text">
+      Ask questions, share knowledge, and stay informed with the latest
+      community updates in one modern space.
+    </p>
+
+    <h3 class="section-title">System Updates</h3>
+
+    <div class="status-grid">
+      <div
+        class="status-card"
+        *ngFor="let post of posts$ | async | slice:0:5; let first = first"
+        [class.large]="first"
+      >
+        <label>Record #{{ post.id }}</label>
+        <h4 class="post-title">{{ post.title | titlecase }}</h4>
+
+        <p class="post-body">{{ post.body.slice(0, 100) }}...</p>
+
+        <div class="card-footer-brutal">
+          <span class="status-text-blue">VIEW DETAILS →</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800;900&display=swap');
+
+  :root {
+    --blue-focus: #2563eb;
+    --text-main: #000000;
+    --text-muted: #64748b;
+    --border-black: 3px solid #000000;
+  }
+
+  .home-wrapper {
+    padding: 3rem 1.5rem;
+    display: flex;
+    justify-content: center;
+    background: #ffffff;
+  }
+
+  .home-container {
+    width: 100%;
+    max-width: 850px;
+  }
+
+  .page-title {
+    font-size: 3rem;
+    font-weight: 800;
+    text-align: center;
+    color: var(--text-main);
+    margin-bottom: 0.5rem;
+    letter-spacing: -1.5px;
+  }
+
+  .intro-text {
+    text-align: center;
+    max-width: 550px;
+    margin: 0 auto 3.5rem;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: var(--text-muted);
+  }
+
+  .section-title {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 2rem;
+    color: var(--text-main);
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .section-title::after {
+    content: "";
+    height: 3px;
+    flex-grow: 1;
+    background: #000000;
+  }
+
+  /* Matching About.html Grid */
+  .status-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  /* Matching About.html Card Style */
+  .status-card {
+    background: #e9e9e9;
+    border: var(--border-black);
+    padding: 1.8rem;
+    border-radius: 16px;
+    box-shadow: 8px 8px 0px #000000;
+    transition: all 0.2s ease;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .status-card.large {
+    grid-column: span 2;
+  }
+
+  .status-card:hover {
+    transform: translate(-4px, -4px);
+    box-shadow: 12px 12px 0px var(--blue-focus);
+    border-color: var(--blue-focus);
+  }
+
+  .status-card label {
+    display: block;
+    font-size: 0.7rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 0.5rem;
+    letter-spacing: 1px;
+  }
+
+  .post-title {
+    margin: 0 0 0.5rem 0;
+    color: var(--text-main);
+    font-size: 1.3rem;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+
+  .post-body {
+    margin: 0;
+    color: var(--text-muted);
+    font-size: 1rem;
+    line-height: 1.5;
+    flex-grow: 1;
+  }
+
+  .card-footer-brutal {
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 2px solid #000000;
+  }
+
+  .status-text-blue {
+    font-weight: 800;
+    font-size: 0.8rem;
+    color: var(--blue-focus);
+    letter-spacing: 1px;
+  }
+
+  @media (max-width: 600px) {
+    .status-grid { grid-template-columns: 1fr; }
+    .status-card.large { grid-column: span 1; }
+    .page-title { font-size: 2.2rem; }
+  }
+</style>

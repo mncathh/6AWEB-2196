@@ -1,0 +1,186 @@
+<div class="home-wrapper">
+  <div class="home-container">
+    <h2 class="page-title">{{ 'About This Portal' | uppercase }}</h2>
+
+    <p class="intro-text">
+      This application manages service tickets and announcements via a remote
+      JSON API, ensuring real-time data integrity and system transparency.
+    </p>
+
+    <h3 class="section-title">System Status</h3>
+
+    <div class="status-grid">
+      <div class="status-card large">
+        <label>Temporal Insight</label>
+        <p class="time-display">{{ today | date:'medium' }}</p>
+      </div>
+
+      <div class="status-card">
+        <label>API Status</label>
+        <div class="status-indicator">
+          <span class="dot pulse"></span>
+          <span class="status-text">Connected</span>
+        </div>
+      </div>
+
+      <div class="status-card">
+        <label>Architecture</label>
+        <p class="arch-text">Angular 18</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+
+  :root {
+    --blue-focus: #2563eb;
+    --text-main: #000000;
+    --text-muted: #64748b;
+    --border-black: 3px solid #000000;
+  }
+
+  .home-wrapper {
+    padding: 3rem 1.5rem;
+    display: flex;
+    justify-content: center;
+    background: #ffffff; /* Explicit white background */
+  }
+
+  .home-container {
+    width: 100%;
+    max-width: 850px;
+  }
+
+  /* Page Title: Solid Black */
+  .page-title {
+    font-size: 3rem;
+    font-weight: 800;
+    text-align: center;
+    color: var(--text-main);
+    margin-bottom: 0.5rem;
+    letter-spacing: -1.5px;
+  }
+
+  .intro-text {
+    text-align: center;
+    max-width: 550px;
+    margin: 0 auto 3.5rem;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: var(--text-muted);
+  }
+
+  /* Section Divider with Black Line */
+  .section-title {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 2rem;
+    color: var(--text-main);
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .section-title::after {
+    content: "";
+    height: 3px;
+    flex-grow: 1;
+    background: #000000;
+  }
+
+  /* Status Grid */
+  .status-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  /* Bento Cards: White BG + Black Border + Hard Shadow */
+  .status-card {
+    background: #e9e9e9;
+    border: var(--border-black);
+    padding: 1.8rem;
+    border-radius: 16px;
+    box-shadow: 8px 8px 0px #000000;
+    transition: all 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .status-card.large {
+    grid-column: span 2;
+    background: #f8fafc; /* Subtle variation for the large card */
+  }
+
+  .status-card:hover {
+    transform: translate(-4px, -4px);
+    box-shadow: 12px 12px 0px var(--blue-focus);
+    border-color: var(--blue-focus);
+  }
+
+  .status-card label {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: var(--text-main);
+    margin-bottom: 0.8rem;
+    letter-spacing: 1px;
+  }
+
+  .status-card p {
+    margin: 0;
+    color: var(--text-main);
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
+
+  .time-display {
+    font-family: 'Courier New', Courier, monospace;
+    color: var(--blue-focus) !important;
+  }
+
+  .arch-text {
+    color: var(--text-main);
+  }
+
+  /* Connection Indicator */
+  .status-indicator {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .status-text {
+    font-weight: 700;
+    color: var(--text-main);
+  }
+
+  .dot {
+    height: 12px;
+    width: 12px;
+    background-color: #10b981;
+    border: 2px solid #000000;
+    border-radius: 50%;
+  }
+
+  .pulse {
+    animation: pulse-green 2s infinite;
+  }
+
+  @keyframes pulse-green {
+    0% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+    70% { box-shadow: 0 0 0 10px rgba(16, 185, 129, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+  }
+
+  @media (max-width: 600px) {
+    .status-grid { grid-template-columns: 1fr; }
+    .status-card.large { grid-column: span 1; }
+    .page-title { font-size: 2.2rem; }
+  }
+</style>

@@ -1,0 +1,68 @@
+/* Page container */
+.home-container {
+  min-height: 100vh;
+  background: #f4f6f8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Card layout */
+.home-card {
+  background: #ffffff;
+  max-width: 700px;
+  width: 100%;
+  padding: 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+/* Titles */
+.page-title {
+  text-align: center;
+  font-size: 1.9rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 1rem;
+}
+
+.section-title {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+  color: #34495e;
+}
+
+/* Intro text */
+.intro-text {
+  text-align: center;
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* Updates list */
+.update-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.update-item {
+  padding: 0.9rem 1rem;
+  margin-bottom: 0.6rem;
+  background: #f9fafb;
+  border-left: 4px solid #3498db;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  color: #2c3e50;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.update-item:hover {
+  background: #eef6fd;
+  transform: translateX(4px);
+  cursor: pointer;
+}

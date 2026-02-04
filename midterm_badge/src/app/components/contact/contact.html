@@ -1,0 +1,224 @@
+<div class="home-wrapper">
+  <div class="home-container">
+    <h2 class="page-title">{{ 'Contact Support' | uppercase }}</h2>
+
+    <p class="intro-text">
+      Send a message to our community help desk. Our team typically responds within 24 hours.
+    </p>
+
+    <div class="contact-grid">
+      <div class="glass-card form-section">
+        <form (ngSubmit)="submitForm()">
+          <div class="input-group">
+            <label>Email Address</label>
+            <input
+              type="email"
+              name="email"
+              [(ngModel)]="userEmail"
+              placeholder="name@domain.com"
+              class="modern-input"
+              required
+            >
+          </div>
+
+          <div class="input-group">
+            <label>Inquiry</label>
+            <textarea
+              name="msg"
+              [(ngModel)]="userMessage"
+              rows="5"
+              placeholder="Describe your issue..."
+              class="modern-input"
+            ></textarea>
+          </div>
+
+          <button type="submit" class="submit-btn">
+            Submit Ticket <span>→</span>
+          </button>
+        </form>
+      </div>
+
+      <div class="preview-card" *ngIf="userEmail">
+        <div class="preview-header">
+          <span class="pulse-icon"></span>
+          <label>Live Ticket Preview</label>
+        </div>
+        <div class="preview-content">
+          <p><strong>From:</strong> {{ userEmail | lowercase }}</p>
+          <p class="preview-msg" *ngIf="userMessage">"{{ userMessage }}"</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+
+  :root {
+    --blue-main: #2563eb;
+    --blue-accent: #3b82f6;
+    --text-dark: #0f172a;
+    --text-muted: #64748b;
+  }
+
+  /* Centering wrapper */
+  .home-wrapper {
+    padding: 3rem 2rem;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .home-container {
+    width: 100%;
+    max-width: 700px; /* Tighter width for contact forms looks more professional */
+  }
+
+  /* Page Title: Solid Black */
+  .page-title {
+    font-size: 2.8rem;
+    font-weight: 800;
+    text-align: center;
+    color: #000000;
+    margin-bottom: 0.5rem;
+    letter-spacing: -1.5px;
+    background: none;
+    -webkit-text-fill-color: initial;
+  }
+
+  .intro-text {
+    text-align: center;
+    max-width: 550px;
+    margin: 0 auto 3rem;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: var(--text-muted);
+  }
+
+  /* Card Design: Black border + Offset Shadow for White BG */
+  .glass-card {
+    background: #ffffff;
+    border: 3px solid #000000;
+    padding: 2.5rem;
+    border-radius: 20px;
+    box-shadow: 12px 12px 0px #000000; /* Distinctive modern shadow */
+    transition: all 0.2s ease;
+  }
+
+  .input-group {
+    margin-bottom: 1.5rem;
+  }
+
+  .input-group label {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: #000000;
+    margin-bottom: 0.6rem;
+    letter-spacing: 1px;
+  }
+
+  .modern-input {
+    width: 100%;
+    background: #fdfdfd;
+    border: 2px solid #000000;
+    border-radius: 10px;
+    padding: 1rem;
+    color: var(--text-dark);
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    transition: all 0.2s ease;
+  }
+
+  .modern-input:focus {
+    outline: none;
+    background: #ffffff;
+    border-color: var(--blue-main);
+    box-shadow: 4px 4px 0px var(--blue-main);
+    transform: translate(-2px, -2px);
+  }
+
+  /* Submit Button: Solid Black */
+  .submit-btn {
+    width: 100%;
+    background: #000000;
+    color: #ffffff;
+    border: none;
+    padding: 1.2rem;
+    border-radius: 12px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    margin-top: 1rem;
+  }
+
+  .submit-btn:hover {
+    background: var(--blue-main);
+    transform: translate(-3px, -3px);
+    box-shadow: 6px 6px 0px #000000;
+  }
+
+  /* Preview Card: Dark contrast */
+  .preview-card {
+    background: #0f172a;
+    border: 3px solid #000000;
+    padding: 1.5rem;
+    border-radius: 20px;
+    color: #ffffff;
+    margin-top: 3rem;
+    box-shadow: 10px 10px 0px var(--blue-accent);
+  }
+
+  .preview-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 0.6rem;
+  }
+
+  .preview-header label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--blue-accent);
+    letter-spacing: 1px;
+  }
+
+  .pulse-icon {
+    width: 10px;
+    height: 10px;
+    background: #10b981;
+    border-radius: 50%;
+    animation: pulse-glow 2s infinite;
+  }
+
+  .preview-msg {
+    margin-top: 12px;
+    color: #94a3b8;
+    font-style: italic;
+    line-height: 1.5;
+  }
+
+  @keyframes pulse-glow {
+    0% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+    70% { box-shadow: 0 0 0 10px rgba(16, 185, 129, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+  }
+
+  @media (max-width: 600px) {
+    .page-title { font-size: 2.2rem; }
+    .home-wrapper { padding: 2rem 1rem; }
+    .glass-card { padding: 1.5rem; }
+  }
+</style>
