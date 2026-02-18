@@ -1,0 +1,309 @@
+<div class="form-wrapper">
+  <!-- Form Header - Centered -->
+  <div class="form-header">
+    <div class="header-badge">
+      <span class="badge-text">TEMPLATE-DRIVEN FORM</span>
+    </div>
+    <h1 class="form-title">Create Your Account</h1>
+    <p class="form-subtitle">Join our community today</p>
+  </div>
+
+  <!-- Registration Form -->
+  <form (ngSubmit)="onSubmit()" #regForm="ngForm" class="modern-form">
+
+    <!-- Personal Information Section -->
+    <div class="form-section">
+      <h2 class="section-title">Personal Information</h2>
+
+      <div class="form-grid">
+        <!-- Full Name -->
+        <div class="form-field">
+          <label class="field-label">
+            Full Name <span class="required">*</span>
+          </label>
+          <input
+            type="text"
+            name="fullName"
+            class="form-input"
+            [(ngModel)]="fullName"
+            #nameField="ngModel"
+            placeholder="John Doe"
+            required
+            minlength="3">
+          @if (nameField.invalid && nameField.touched) {
+            <div class="field-error">
+              @if (nameField.errors?.['required']) {
+                <span>Full name is required</span>
+              }
+              @if (nameField.errors?.['minlength']) {
+                <span>Minimum 3 characters</span>
+              }
+            </div>
+          }
+        </div>
+
+        <!-- Email -->
+        <div class="form-field">
+          <label class="field-label">
+            Email Address <span class="required">*</span>
+          </label>
+          <input
+            type="email"
+            name="email"
+            class="form-input"
+            [(ngModel)]="email"
+            #emailField="ngModel"
+            placeholder="john@example.com"
+            required
+            email>
+          @if (emailField.invalid && emailField.touched) {
+            <div class="field-error">
+              @if (emailField.errors?.['required']) {
+                <span>Email is required</span>
+              }
+              @if (emailField.errors?.['email']) {
+                <span>Invalid email format</span>
+              }
+            </div>
+          }
+        </div>
+
+        <!-- Phone -->
+        <div class="form-field">
+          <label class="field-label">Phone Number</label>
+          <input
+            type="tel"
+            name="phone"
+            class="form-input"
+            [(ngModel)]="phone"
+            #phoneField="ngModel"
+            placeholder="+1 234 567 8900"
+            pattern="[0-9+\-\s]+">
+          @if (phoneField.invalid && phoneField.touched) {
+            <div class="field-error">
+              <span>Enter a valid phone number</span>
+            </div>
+          }
+        </div>
+
+        <!-- Date of Birth -->
+        <div class="form-field">
+          <label class="field-label">Date of Birth</label>
+          <input
+            type="date"
+            name="dateOfBirth"
+            class="form-input"
+            [(ngModel)]="dateOfBirth">
+        </div>
+      </div>
+    </div>
+
+    <!-- Security Section -->
+    <div class="form-section">
+      <h2 class="section-title">Security</h2>
+
+      <div class="form-grid">
+        <!-- Password -->
+        <div class="form-field">
+          <label class="field-label">
+            Password <span class="required">*</span>
+          </label>
+          <div class="password-field">
+            <input
+              [type]="showPassword ? 'text' : 'password'"
+              name="password"
+              class="form-input"
+              [(ngModel)]="password"
+              #passField="ngModel"
+              placeholder="••••••••"
+              required
+              minlength="6">
+            <button
+              type="button"
+              class="password-toggle"
+              (click)="showPassword = !showPassword">
+              {{ showPassword ? 'HIDE' : 'SHOW' }}
+            </button>
+          </div>
+          @if (passField.invalid && passField.touched) {
+            <div class="field-error">
+              @if (passField.errors?.['required']) {
+                <span>Password is required</span>
+              }
+              @if (passField.errors?.['minlength']) {
+                <span>Minimum 6 characters</span>
+              }
+            </div>
+          }
+        </div>
+
+        <!-- Confirm Password -->
+        <div class="form-field">
+          <label class="field-label">
+            Confirm Password <span class="required">*</span>
+          </label>
+          <input
+            type="password"
+            name="confirmPassword"
+            class="form-input"
+            [(ngModel)]="confirmPassword"
+            #confirmField="ngModel"
+            placeholder="••••••••"
+            required>
+          @if (confirmField.touched && !passwordsMatch()) {
+            <div class="field-error">
+              <span>Passwords do not match</span>
+            </div>
+          }
+        </div>
+      </div>
+    </div>
+
+    <!-- Additional Information Section -->
+    <div class="form-section">
+      <h2 class="section-title">Additional Information</h2>
+
+      <div class="form-grid">
+        <!-- GENDER - Radio Buttons (Required Field) -->
+        <div class="form-field full-width">
+          <label class="field-label">
+            Gender <span class="required">*</span>
+          </label>
+          <div class="radio-group">
+            <label class="radio-option">
+              <input
+                type="radio"
+                name="gender"
+                value="male"
+                [(ngModel)]="gender"
+                #genderField="ngModel"
+                required>
+              <span class="radio-custom"></span>
+              <span class="radio-label">Male</span>
+            </label>
+            <label class="radio-option">
+              <input
+                type="radio"
+                name="gender"
+                value="female"
+                [(ngModel)]="gender"
+                required>
+              <span class="radio-custom"></span>
+              <span class="radio-label">Female</span>
+            </label>
+            <label class="radio-option">
+              <input
+                type="radio"
+                name="gender"
+                value="other"
+                [(ngModel)]="gender"
+                required>
+              <span class="radio-custom"></span>
+              <span class="radio-label">Other</span>
+            </label>
+          </div>
+          @if (genderField.invalid && genderField.touched) {
+            <div class="field-error">
+              <span>Please select your gender</span>
+            </div>
+          }
+        </div>
+
+        <!-- EMPLOYMENT STATUS - Dropdown (Required Field) -->
+<div class="form-field full-width">
+  <label class="field-label">
+    Employment Status <span class="required">*</span>
+  </label>
+  <select
+    name="employmentStatus"
+    class="form-select"
+    [(ngModel)]="employmentStatus"
+    #statusField="ngModel"
+    required>
+    <option value="" disabled selected>Select employment status</option>
+    <option value="full-time">Full-Time</option>
+    <option value="part-time">Part-Time</option>
+    <option value="contract">Contract</option>
+    <option value="temporary">Temporary</option>
+    <option value="intern">Intern</option>
+    <option value="freelance">Freelance</option>
+    <option value="self-employed">Self-Employed</option>
+    <option value="unemployed">Unemployed</option>
+    <option value="student">Student</option>
+    <option value="retired">Retired</option>
+  </select>
+  @if (statusField.invalid && statusField.touched) {
+    <div class="field-error">
+      <span>Please select your employment status</span>
+    </div>
+  }
+</div>
+        <!-- Newsletter -->
+        <div class="form-field">
+          <label class="checkbox-container">
+            <input
+              type="checkbox"
+              name="newsletter"
+              [(ngModel)]="newsletter">
+            <span class="checkbox-custom"></span>
+            <span class="checkbox-label">Subscribe to newsletter</span>
+          </label>
+        </div>
+
+        <!-- COMMENTS - Notes (Optional Field) -->
+        <div class="form-field full-width">
+          <label class="field-label">Comments / Notes</label>
+          <textarea
+            name="comments"
+            class="form-textarea"
+            [(ngModel)]="comments"
+            rows="4"
+            placeholder="Enter any additional comments or notes here..."></textarea>
+        </div>
+      </div>
+    </div>
+
+    <!-- Form Actions -->
+    <div class="form-actions">
+      <button
+        type="submit"
+        class="btn btn-primary"
+        [disabled]="!regForm.valid || !passwordsMatch()">
+        Submit Registration
+      </button>
+      <button
+        type="button"
+        class="btn btn-secondary"
+        (click)="resetForm()">
+        Clear Form
+      </button>
+    </div>
+  </form>
+</div>
+
+<!-- Success Page Modal/Overlay -->
+@if (showSuccessPage) {
+  <div class="success-overlay">
+    <div class="success-card">
+      <div class="success-checkmark">
+        <div class="check-icon">
+          <span class="icon-line line-tip"></span>
+          <span class="icon-line line-long"></span>
+          <div class="icon-circle"></div>
+          <div class="icon-fix"></div>
+        </div>
+      </div>
+      <h2 class="success-title">Registration Successful!</h2>
+      <p class="success-message-text">Thank you for joining us, <strong>{{ fullName }}</strong>!</p>
+      <div class="success-details">
+        <p><strong>Gender:</strong> {{ gender }}</p>
+        <p><strong>Employment Status:</strong> {{ employmentStatus }}</p>
+        @if (comments) {
+          <p><strong>Comments:</strong> {{ comments }}</p>
+        }
+        <p>We've sent a confirmation email to <strong>{{ email }}</strong></p>
+      </div>
+      <button class="btn btn-success" (click)="closeSuccessPage()">Continue to Dashboard</button>
+    </div>
+  </div>
+}

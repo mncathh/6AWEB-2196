@@ -1,0 +1,207 @@
+<div class="form-wrapper">
+  <header class="form-header">
+    <div class="header-badge"><span class="badge-text">Join the Team</span></div>
+    <h1 class="form-title">Job Application</h1>
+    <p class="form-subtitle">Fill in your details to apply</p>
+  </header>
+
+  <form #jobForm="ngForm" (ngSubmit)="onSubmit()" class="modern-form">
+    <!-- Personal Info Section -->
+    <div class="form-section">
+      <h3 class="section-title">Personal Information</h3>
+      <div class="form-grid">
+        <!-- Full Name -->
+        <div class="form-field">
+          <label class="field-label">
+            <span class="label-icon">👤</span>
+            Full Name <span class="required">*</span>
+          </label>
+          <input
+            type="text"
+            name="fullName"
+            [(ngModel)]="fullName"
+            #fullNameField="ngModel"
+            class="form-input"
+            placeholder="John Doe"
+            required
+            minlength="3">
+          @if (fullNameField.invalid && fullNameField.touched) {
+            <div class="field-error">
+              @if (fullNameField.errors?.['required']) {
+                <span>Full name is required</span>
+              }
+              @if (fullNameField.errors?.['minlength']) {
+                <span>Minimum 3 characters</span>
+              }
+            </div>
+          }
+        </div>
+
+        <!-- Email -->
+        <div class="form-field">
+          <label class="field-label">
+            <span class="label-icon">📧</span>
+            Email Address <span class="required">*</span>
+          </label>
+          <input
+            type="email"
+            name="email"
+            [(ngModel)]="email"
+            #emailField="ngModel"
+            class="form-input"
+            placeholder="john@company.com"
+            required
+            email>
+          @if (emailField.invalid && emailField.touched) {
+            <div class="field-error">
+              @if (emailField.errors?.['required']) {
+                <span>Email is required</span>
+              }
+              @if (emailField.errors?.['email']) {
+                <span>Invalid email format</span>
+              }
+            </div>
+          }
+        </div>
+      </div>
+    </div>
+
+    <!-- Requirements Section -->
+    <div class="form-section">
+      <h3 class="section-title">Requirements & Eligibility</h3>
+      <div class="form-grid">
+        <!-- Gender -->
+        <div class="form-field full-width">
+          <label class="field-label">
+            <span class="label-icon">⚥</span>
+            Gender
+          </label>
+          <div class="radio-group">
+            <label class="radio-option">
+              <input type="radio" name="gender" [(ngModel)]="gender" value="Male">
+              <span class="radio-custom"></span>
+              <span class="radio-label">Male</span>
+            </label>
+            <label class="radio-option">
+              <input type="radio" name="gender" [(ngModel)]="gender" value="Female">
+              <span class="radio-custom"></span>
+              <span class="radio-label">Female</span>
+            </label>
+            <label class="radio-option">
+              <input type="radio" name="gender" [(ngModel)]="gender" value="Other">
+              <span class="radio-custom"></span>
+              <span class="radio-label">Other</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Employment Authorization -->
+        <div class="form-field full-width">
+          <label class="field-label">
+            <span class="label-icon">📋</span>
+            Employment Authorization <span class="required">*</span>
+          </label>
+          <div class="radio-group">
+            <label class="radio-option">
+              <input
+                type="radio"
+                name="status"
+                [(ngModel)]="status"
+                #statusField="ngModel"
+                value="Permanent"
+                required>
+              <span class="radio-custom"></span>
+              <span class="radio-label">Permanent</span>
+            </label>
+            <label class="radio-option">
+              <input
+                type="radio"
+                name="status"
+                [(ngModel)]="status"
+                value="Contract"
+                required>
+              <span class="radio-custom"></span>
+              <span class="radio-label">Contract</span>
+            </label>
+            <label class="radio-option">
+              <input
+                type="radio"
+                name="status"
+                [(ngModel)]="status"
+                value="Probationary"
+                required>
+              <span class="radio-custom"></span>
+              <span class="radio-label">Probationary</span>
+            </label>
+          </div>
+          @if (statusField.invalid && statusField.touched) {
+            <div class="field-error">
+              <span>Please select your employment authorization</span>
+            </div>
+          }
+        </div>
+
+        <!-- Comments / Notes Section -->
+        <div class="form-field full-width">
+          <label class="field-label">
+            <span class="label-icon">💬</span>
+            Additional Comments / Notes
+          </label>
+          <textarea
+            name="comments"
+            [(ngModel)]="comments"
+            #commentsField="ngModel"
+            class="form-textarea"
+            rows="4"
+            placeholder="Tell us anything else you'd like us to know..."></textarea>
+          @if (commentsField.invalid && commentsField.touched) {
+            <div class="field-error">
+              <span>Please check your comments</span>
+            </div>
+          }
+        </div>
+      </div>
+    </div>
+
+    <!-- Form Actions -->
+    <div class="form-actions">
+      <button
+        type="submit"
+        class="btn btn-primary"
+        [disabled]="!jobForm.valid">
+        <span class="btn-icon">✓</span>
+        Submit Application
+      </button>
+      <button
+        type="button"
+        class="btn btn-secondary"
+        (click)="resetForm()">
+        <span class="btn-icon">↺</span>
+        Clear Form
+      </button>
+    </div>
+
+    <!-- Form Status -->
+    <div class="form-status">
+      <div class="status-badge" [class.valid]="jobForm.valid">
+        {{ jobForm.valid ? '✓ Complete' : '✗ Incomplete' }}
+      </div>
+      <div class="status-details">
+        <span>Touched: {{ jobForm.touched ? 'Yes' : 'No' }}</span>
+        <span>Valid: {{ jobForm.valid ? 'Yes' : 'No' }}</span>
+      </div>
+    </div>
+  </form>
+
+  <!-- Success Message -->
+  @if (submitted) {
+    <div class="success-message">
+      <div class="success-icon">✓</div>
+      <div class="success-content">
+        <strong>Application Sent!</strong>
+        <span>Thank you {{ fullName }}. We'll review your application.</span>
+      </div>
+      <button class="close-btn" (click)="submitted = false">×</button>
+    </div>
+  }
+</div>

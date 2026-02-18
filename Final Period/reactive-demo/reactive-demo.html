@@ -1,0 +1,298 @@
+<div class="form-wrapper">
+  <!-- Form Header - Centered -->
+  <div class="form-header">
+    <div class="header-badge">
+      <span class="badge-text">REACTIVE FORM</span>
+    </div>
+    <h1 class="form-title">Create Your Account</h1>
+    <p class="form-subtitle">Join our community today</p>
+  </div>
+
+  <!-- Registration Form -->
+  <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()" class="modern-form">
+
+    <!-- Personal Information Section -->
+    <div class="form-section">
+      <h2 class="section-title">Personal Information</h2>
+
+      <div class="form-grid">
+        <!-- Full Name -->
+        <div class="form-field">
+          <label class="field-label">
+            Full Name <span class="required">*</span>
+          </label>
+          <input
+            type="text"
+            class="form-input"
+            formControlName="fullName"
+            placeholder="John Doe"
+            [class.is-invalid]="fullName?.invalid && (fullName?.touched || submitted)">
+          @if (fullName?.invalid && (fullName?.touched || submitted)) {
+            <div class="field-error">
+              @if (fullName?.errors?.['required']) {
+                <span>Full name is required</span>
+              }
+              @if (fullName?.errors?.['minlength']) {
+                <span>Minimum 3 characters</span>
+              }
+            </div>
+          }
+        </div>
+
+        <!-- Email -->
+        <div class="form-field">
+          <label class="field-label">
+            Email Address <span class="required">*</span>
+          </label>
+          <input
+            type="email"
+            class="form-input"
+            formControlName="email"
+            placeholder="john@example.com"
+            [class.is-invalid]="email?.invalid && (email?.touched || submitted)">
+          @if (email?.invalid && (email?.touched || submitted)) {
+            <div class="field-error">
+              @if (email?.errors?.['required']) {
+                <span>Email is required</span>
+              }
+              @if (email?.errors?.['email']) {
+                <span>Invalid email format</span>
+              }
+            </div>
+          }
+        </div>
+
+        <!-- Phone -->
+        <div class="form-field">
+          <label class="field-label">Phone Number</label>
+          <input
+            type="tel"
+            class="form-input"
+            formControlName="phone"
+            placeholder="+1 234 567 8900"
+            [class.is-invalid]="phone?.invalid && phone?.touched">
+          @if (phone?.invalid && phone?.touched) {
+            <div class="field-error">
+              <span>Enter a valid phone number</span>
+            </div>
+          }
+        </div>
+
+        <!-- Date of Birth -->
+        <div class="form-field">
+          <label class="field-label">Date of Birth</label>
+          <input
+            type="date"
+            class="form-input"
+            formControlName="dateOfBirth">
+        </div>
+      </div>
+    </div>
+
+    <!-- Security Section -->
+    <div class="form-section">
+      <h2 class="section-title">Security</h2>
+
+      <div class="form-grid">
+        <!-- Password - Enhanced Validation -->
+        <div class="form-field">
+          <label class="field-label">
+            Password <span class="required">*</span>
+          </label>
+          <div class="password-field">
+            <input
+              [type]="showPassword ? 'text' : 'password'"
+              class="form-input"
+              formControlName="password"
+              placeholder="••••••••"
+              [class.is-invalid]="password?.invalid && (password?.touched || submitted)">
+            <button
+              type="button"
+              class="password-toggle"
+              (click)="showPassword = !showPassword">
+              {{ showPassword ? 'HIDE' : 'SHOW' }}
+            </button>
+          </div>
+          @if (password?.invalid && (password?.touched || submitted)) {
+            <div class="field-error">
+              @if (password?.errors?.['required']) {
+                <span>Password is required</span>
+              }
+              @if (password?.errors?.['minlength']) {
+                <span>Minimum 8 characters</span>
+              }
+              @if (password?.errors?.['pattern']) {
+                <span>Must contain uppercase, lowercase, and number</span>
+              }
+            </div>
+          }
+          <!-- Password Strength Indicator -->
+          @if (password?.value && password?.value.length > 0) {
+            <div class="password-strength">
+              <div class="strength-bar" [class.weak]="passwordStrength === 'weak'"
+                                            [class.medium]="passwordStrength === 'medium'"
+                                            [class.strong]="passwordStrength === 'strong'">
+                <div class="strength-fill" [style.width.%]="passwordStrengthPercent"></div>
+              </div>
+              <span class="strength-text">{{ passwordStrengthText }}</span>
+            </div>
+          }
+        </div>
+
+        <!-- Confirm Password -->
+        <div class="form-field">
+          <label class="field-label">
+            Confirm Password <span class="required">*</span>
+          </label>
+          <input
+            type="password"
+            class="form-input"
+            formControlName="confirmPassword"
+            placeholder="••••••••"
+            [class.is-invalid]="(confirmPassword?.touched || submitted) && passwordMismatch">
+          @if ((confirmPassword?.touched || submitted) && passwordMismatch) {
+            <div class="field-error">
+              <span>Passwords do not match</span>
+            </div>
+          }
+        </div>
+      </div>
+    </div>
+
+    <!-- Additional Information Section -->
+    <div class="form-section">
+      <h2 class="section-title">Additional Information</h2>
+
+      <div class="form-grid">
+        <!-- GENDER - Radio Buttons (Required Field) -->
+        <div class="form-field full-width">
+          <label class="field-label">
+            Gender <span class="required">*</span>
+          </label>
+          <div class="radio-group">
+            <label class="radio-option">
+              <input
+                type="radio"
+                formControlName="gender"
+                value="male">
+              <span class="radio-custom"></span>
+              <span class="radio-label">Male</span>
+            </label>
+            <label class="radio-option">
+              <input
+                type="radio"
+                formControlName="gender"
+                value="female">
+              <span class="radio-custom"></span>
+              <span class="radio-label">Female</span>
+            </label>
+            <label class="radio-option">
+              <input
+                type="radio"
+                formControlName="gender"
+                value="other">
+              <span class="radio-custom"></span>
+              <span class="radio-label">Other</span>
+            </label>
+          </div>
+          @if (gender?.invalid && (gender?.touched || submitted)) {
+            <div class="field-error">
+              <span>Please select your gender</span>
+            </div>
+          }
+        </div>
+
+        <!-- EMPLOYMENT STATUS - Dropdown (Required Field) -->
+        <div class="form-field full-width">
+          <label class="field-label">
+            Employment Status <span class="required">*</span>
+          </label>
+          <select
+            class="form-select"
+            formControlName="employmentStatus">
+            <option value="" disabled selected>Select employment status</option>
+            <option value="full-time">Full-Time</option>
+            <option value="part-time">Part-Time</option>
+            <option value="contract">Contract</option>
+            <option value="temporary">Temporary</option>
+            <option value="intern">Intern</option>
+            <option value="freelance">Freelance</option>
+            <option value="self-employed">Self-Employed</option>
+            <option value="unemployed">Unemployed</option>
+            <option value="student">Student</option>
+            <option value="retired">Retired</option>
+          </select>
+          @if (employmentStatus?.invalid && (employmentStatus?.touched || submitted)) {
+            <div class="field-error">
+              <span>Please select your employment status</span>
+            </div>
+          }
+        </div>
+
+        <!-- Newsletter -->
+        <div class="form-field">
+          <label class="checkbox-container">
+            <input
+              type="checkbox"
+              formControlName="newsletter">
+            <span class="checkbox-custom"></span>
+            <span class="checkbox-label">Subscribe to newsletter</span>
+          </label>
+        </div>
+
+        <!-- COMMENTS - Notes (Optional Field) -->
+        <div class="form-field full-width">
+          <label class="field-label">Comments / Notes</label>
+          <textarea
+            class="form-textarea"
+            formControlName="comments"
+            rows="4"
+            placeholder="Enter any additional comments or notes here..."></textarea>
+        </div>
+      </div>
+    </div>
+
+    <!-- Form Actions -->
+    <div class="form-actions">
+      <button
+        type="submit"
+        class="btn btn-primary"
+        [disabled]="registrationForm.invalid">
+        Submit Registration
+      </button>
+      <button
+        type="button"
+        class="btn btn-secondary"
+        (click)="resetForm()">
+        Clear Form
+      </button>
+    </div>
+  </form>
+</div>
+
+<!-- Success Page Modal/Overlay -->
+@if (showSuccessPage) {
+  <div class="success-overlay">
+    <div class="success-card">
+      <div class="success-checkmark">
+        <div class="check-icon">
+          <span class="icon-line line-tip"></span>
+          <span class="icon-line line-long"></span>
+          <div class="icon-circle"></div>
+          <div class="icon-fix"></div>
+        </div>
+      </div>
+      <h2 class="success-title">Registration Successful!</h2>
+      <p class="success-message-text">Thank you for joining us, <strong>{{ registrationForm.value.fullName }}</strong>!</p>
+      <div class="success-details">
+        <p><strong>Gender:</strong> {{ registrationForm.value.gender }}</p>
+        <p><strong>Employment Status:</strong> {{ registrationForm.value.employmentStatus }}</p>
+        @if (registrationForm.value.comments) {
+          <p><strong>Comments:</strong> {{ registrationForm.value.comments }}</p>
+        }
+        <p>We've sent a confirmation email to <strong>{{ registrationForm.value.email }}</strong></p>
+      </div>
+      <button class="btn btn-success" (click)="closeSuccessPage()">Continue to Dashboard</button>
+    </div>
+  </div>
+}
