@@ -1,0 +1,104 @@
+/* Container to center the card */
+.form-container {
+  padding: 20px;
+  max-width: 500px;
+  margin: 40px auto;
+}
+
+/* Card Styling - Cloud White */
+mat-card {
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 15px; /* Softer, rounder "cloud" corners */
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05); /* Softer shadow */
+  border: 1px solid #e1f5fe;
+}
+
+mat-card-header {
+  margin-bottom: 20px;
+  justify-content: center;
+  color: #0277bd; /* Deep sky blue for title */
+}
+
+/* Toolbar - Sky Blue */
+mat-toolbar {
+  background-color: #03a9f4 !important; /* Sky Blue */
+  color: white !important;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Suggested Form Styles */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+mat-form-field {
+  width: 100%;
+}
+
+/* Button - Bright Blue */
+button {
+  display: block;
+  width: 100%;
+  margin-top: 10px;
+  background-color: #03a9f4 !important;
+  color: white !important;
+  border-radius: 20px; /* Rounded button */
+}
+
+/* Slider Styles */
+.slider-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+mat-slider {
+  width: 100%;
+}
+
+.slider-label {
+  color: #01579b; /* Navy sky blue */
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* Radio Styles */
+.radio-group {
+  margin-bottom: 20px;
+  padding: 10px;
+  background: #f1faff; /* Very faint blue tint */
+  border-radius: 8px;
+}
+
+.radio-label {
+  display: block;
+  color: #0277bd;
+  font-size: 14px;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+.gender-radio-group {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+/* Toolbar Icon Spacing */
+mat-toolbar mat-icon {
+  margin-right: 10px;
+}
+
+.results {
+  margin-top: 20px;
+  font-size: 13px;
+  line-height: 1.5;
+  background-color: #e1f5fe;
+  padding: 15px;
+  border-radius: 10px;
+  color: #01579b;
+}
