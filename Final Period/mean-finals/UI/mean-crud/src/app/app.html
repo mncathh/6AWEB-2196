@@ -1,0 +1,111 @@
+<!-- FLOATING CLOUDS -->
+<div class="cloud cloud-1"></div>
+<div class="cloud cloud-2"></div>
+<div class="cloud cloud-3"></div>
+
+<div class="container">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="totoro-deco">🐾</div>
+    <div class="soot-sprites">✦ ✦ ✦</div>
+    <h1>📚 Book Borrow</h1>
+    <p>A cozy little place for your favourite books</p>
+    <button class="btn btn-add" (click)="toggleForm()">
+      {{ showForm ? '✖ Close' : '＋ Add a Book' }}
+    </button>
+  </div>
+
+  <!-- ADD BOOK FORM -->
+  <div class="card form-card" *ngIf="showForm">
+    <h2>🌱 New Book</h2>
+    <div class="form-grid">
+      <div class="form-group">
+        <label>Title</label>
+        <input [(ngModel)]="newBook.title" placeholder="Book title..." />
+      </div>
+      <div class="form-group">
+        <label>Author</label>
+        <input [(ngModel)]="newBook.author" placeholder="Author name..." />
+      </div>
+      <div class="form-group">
+        <label>Genre</label>
+        <input [(ngModel)]="newBook.genre" placeholder="e.g. Fantasy, Adventure..." />
+      </div>
+      <div class="form-group">
+        <label>Year</label>
+        <input type="number" [(ngModel)]="newBook.year" placeholder="Year published..." />
+      </div>
+      <div class="form-group full-width">
+        <label>Description</label>
+        <textarea [(ngModel)]="newBook.description" placeholder="A short description..."></textarea>
+      </div>
+      <div class="form-group">
+        <label>Price (₱)</label>
+        <input type="number" [(ngModel)]="newBook.price" placeholder="0.00" />
+      </div>
+    </div>
+    <div class="btn-row">
+      <button class="btn btn-save" (click)="addBook()">🌸 Save Book</button>
+    </div>
+  </div>
+
+  <!-- EDIT BOOK FORM -->
+  <div class="card form-card edit-card" *ngIf="isEditing">
+    <h2>🍀 Edit Book</h2>
+    <div class="form-grid">
+      <div class="form-group">
+        <label>Title</label>
+        <input [(ngModel)]="selectedBook.title" />
+      </div>
+      <div class="form-group">
+        <label>Author</label>
+        <input [(ngModel)]="selectedBook.author" />
+      </div>
+      <div class="form-group">
+        <label>Genre</label>
+        <input [(ngModel)]="selectedBook.genre" />
+      </div>
+      <div class="form-group">
+        <label>Year</label>
+        <input type="number" [(ngModel)]="selectedBook.year" />
+      </div>
+      <div class="form-group full-width">
+        <label>Description</label>
+        <textarea [(ngModel)]="selectedBook.description"></textarea>
+      </div>
+      <div class="form-group">
+        <label>Price (₱)</label>
+        <input type="number" [(ngModel)]="selectedBook.price" />
+      </div>
+    </div>
+    <div class="btn-row">
+      <button class="btn btn-save" (click)="updateBook()">✅ Update Book</button>
+      <button class="btn btn-cancel" (click)="cancelEdit()">✖ Cancel</button>
+    </div>
+  </div>
+
+  <!-- BOOK LIST -->
+  <div class="book-grid">
+    <div class="card book-card" *ngFor="let book of books">
+      <div class="book-badge">{{ book.genre }}</div>
+      <h3>{{ book.title }}</h3>
+      <p class="author">{{ book.author }}</p>
+      <p class="description">{{ book.description }}</p>
+      <div class="book-meta">
+        <span>📅 {{ book.year }}</span>
+        <span>💰 ₱{{ book.price }}</span>
+      </div>
+      <div class="btn-row">
+        <button class="btn btn-edit" (click)="editBook(book)">✏️ Edit</button>
+        <button class="btn btn-delete" (click)="deleteBook(book['_id']!)">🗑️ Delete</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- EMPTY STATE -->
+  <div class="empty" *ngIf="books.length === 0">
+    <p>No books yet... bring one home! 🏡</p>
+  </div>
+
+</div>
